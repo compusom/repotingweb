@@ -12,9 +12,9 @@ This contains everything you need to run your app locally.
 2. Run the app:
    `npm run dev`
 
-3. To generate a static build:
+3. To generate a static build for offline use:
    `npm run build`
-   The compiled files will be in the `dist/` folder. Open `dist/index.html` in your browser to view the app without a server.
+   This bundles React and Tailwind CSS locally so no external CDNs are required. The compiled files will be in the `dist/` folder. Open `dist/index.html` directly in your browser to run the app 100% offline.
 
 
    `npm run preview`
