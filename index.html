@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marketing Report Analyzer</title>
-    <link rel="stylesheet" href="./tailwind.css">
+    <link rel="stylesheet" href="./tailwind.css" />
     <style>
       /* Custom scrollbar for webkit browsers */
       ::-webkit-scrollbar {
@@ -27,30 +27,52 @@
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
-        .print\:p-0 { padding: 0 !important; }
-        .print\:overflow-visible { overflow: visible !important; }
-        .print\:bg-white { background-color: white !important; }
-        .print\:text-black { color: black !important; }
-        .print\:shadow-none { box-shadow: none !important; }
-        .print\:border { border-width: 1px !important; }
-        .print\:border-gray-300 { border-color: #d1d5db !important; }
-        .print\:bg-gray-100 { background-color: #f3f4f6 !important; }
-        .print\:text-gray-600 { color: #4b5563 !important; }
-         .print\:text-green-600 { color: #059669 !important; }
-        .print\:text-red-600 { color: #dc2626 !important; }
+        .print\:p-0 {
+          padding: 0 !important;
+        }
+        .print\:overflow-visible {
+          overflow: visible !important;
+        }
+        .print\:bg-white {
+          background-color: white !important;
+        }
+        .print\:text-black {
+          color: black !important;
+        }
+        .print\:shadow-none {
+          box-shadow: none !important;
+        }
+        .print\:border {
+          border-width: 1px !important;
+        }
+        .print\:border-gray-300 {
+          border-color: #d1d5db !important;
+        }
+        .print\:bg-gray-100 {
+          background-color: #f3f4f6 !important;
+        }
+        .print\:text-gray-600 {
+          color: #4b5563 !important;
+        }
+        .print\:text-green-600 {
+          color: #059669 !important;
+        }
+        .print\:text-red-600 {
+          color: #dc2626 !important;
+        }
         .print\:divide-gray-300 > :not([hidden]) ~ :not([hidden]) {
-            border-color: #d1d5db !important;
+          border-color: #d1d5db !important;
         }
         .print\:hidden {
-            display: none !important;
+          display: none !important;
         }
       }
     </style>
-
-<link rel="stylesheet" href="/index.css">
-
-</head>
-<body class="bg-gray-900">
+  </head>
+  <body class="bg-gray-900">
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
