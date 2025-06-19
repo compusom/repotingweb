@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 
+
 export default defineConfig({
   base: './',
   resolve: {
@@ -8,4 +9,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
     },
   },
+
 });

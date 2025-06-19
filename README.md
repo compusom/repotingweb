@@ -16,5 +16,5 @@ This contains everything you need to run your app locally.
    `npm run build`
    The compiled files will be in the `dist/` folder. Open `dist/index.html` in your browser to view the app without a server.
 
-4. Optionally preview the build with:
+
    `npm run preview`
