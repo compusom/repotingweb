@@ -28,21 +28,37 @@ const App: React.FC = () => {
   // Attempt to use useReactToPrint from the default export.
   // Using 'as any' to bypass TypeScript's type checking for this specific call,
   // focusing on resolving the JavaScript runtime module loading error first.
-  const handlePrint = (ReactToPrint as any).useReactToPrint({ 
+  const handlePrint = (ReactToPrint as any).useReactToPrint({
     content: () => componentToPrintRef.current,
     documentTitle: 'Marketing_Report',
   });
 
-  useEffect(() => {
+  const loadReportFromText = (text: string) => {
     try {
-      const parsedData = parseReportData(reportTxt);
+      const parsedData = parseReportData(text);
       setReportData(parsedData);
+      setError(null);
     } catch (e) {
-      console.error("Error parsing report data:", e);
-      setError("Failed to parse report data.");
-    } finally {
-      setLoading(false);
+      console.error('Error parsing report data:', e);
+      setError('Failed to parse report data.');
     }
+  };
+
+  const handleFileUpload = (file: File) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const text = reader.result as string;
+      loadReportFromText(text);
+    };
+    reader.onerror = () => {
+      setError('Failed to read file.');
+    };
+    reader.readAsText(file);
+  };
+
+  useEffect(() => {
+    loadReportFromText(reportTxt);
+    setLoading(false);
   }, []);
 
   const getPageTitle = () => {
@@ -75,7 +91,12 @@ const App: React.FC = () => {
       <div className="flex h-screen bg-gray-900 text-gray-100">
         <Sidebar />
         <div className="flex-1 flex flex-col overflow-hidden">
-          <Header title={getPageTitle()} onDownloadPDF={handlePrint} reportDate={reportData.generalInfo.reportDate || "N/A"} />
+          <Header
+            title={getPageTitle()}
+            onDownloadPDF={handlePrint}
+            reportDate={reportData.generalInfo.reportDate || "N/A"}
+            onUploadFile={handleFileUpload}
+          />
           <main ref={componentToPrintRef} className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-800 p-6 space-y-6 print:p-0 print:overflow-visible print:bg-white print:text-black">
             <Routes>
               <Route path="/" element={<OverviewPage />} />
