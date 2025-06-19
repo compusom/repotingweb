@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing Report Analyzer</title>
+    <script>
+      if (location.protocol === 'file:' && !location.pathname.includes('/dist/')) {
+        location.href = location.href.replace(/index\.html$/, 'dist/index.html');
+      }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom scrollbar for webkit browsers */
