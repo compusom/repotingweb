@@ -1,0 +1,5 @@
+{
+  "name": "Marketing Report Analyzer",
+  "description": "A web application to visualize and analyze marketing report data, parsed from a text-based report format.",
+  "requestFramePermissions": []
+}

@@ -1,11 +1,14 @@
-# repotingweb
+# Run and deploy your AI Studio app
 
-Este proyecto contiene una página web simple para importar un reporte de Bitácora y visualizar sus métricas.
+This contains everything you need to run your app locally.
 
-## Uso
+## Run Locally
 
-1. Abre `index.html` en tu navegador.
-2. Copia el texto completo del reporte y pégalo en el área de texto.
-3. Pulsa **Procesar** para generar las tablas de métricas.
+**Prerequisites:**  Node.js
 
-Todo el procesamiento se realiza en el navegador, por lo que no se necesita servidor.
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
